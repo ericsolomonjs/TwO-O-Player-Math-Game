@@ -1,6 +1,6 @@
-def Question
+class Question
   @@counter = 0
-  def initialize 
+  def initialize id
     @@counter = @@counter+1
     @assignment_id = id
     @question_answer = self.generate_question_answer
@@ -12,9 +12,13 @@ def Question
     num1 = rand(1..20)
     num2 = rand(1..20)
     answer = num1 + num2
-    question = 'What does #{num1} plus #{num2} equal?'
+    question = "What does #{num1} plus #{num2} equal?"
 
     return [question, answer]
+  end
+
+  def question 
+    return @question
   end
 
   def is_answer_correct? (answer)

@@ -1,8 +1,8 @@
-def Player 
-  def initialize (Id)
+class Player 
+  def initialize (id)
     @questions_answered = []
     @score = 0
-    @id = Id
+    @id = id
   end
 
   def get_score
