@@ -27,12 +27,11 @@ def execute_turn id, questionCounter, game
   score_string = "P1: #{score_string_parts[0]}/#{score_string_parts[1]} vs P2: #{score_string_parts[2]}/#{score_string_parts[3]}"
   
   puts score_string
-  end_turn_string = "----- NEW TURN -----"
-  
+    
   if (game.get_questions_array.length() - 1 == questionCounter)
     puts "---- END OF GAME ----"
   else
-    puts end_turn_string
+    puts "----- NEW TURN -----"
   end
 
 end
@@ -41,7 +40,7 @@ end
 #create game with 3 questions per player
 game = Game.new (3) 
 #iterate through array of questions
-game.get_questions_array.each_with_index do |questionCounter, index|
+game.get_questions_array.each_with_index do |question, index|
   if index & 1 == 1 #execute if odd player 1
     execute_turn 0, index, game
   else # if even then player 2
